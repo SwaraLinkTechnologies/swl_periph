@@ -1,0 +1,50 @@
+*.d
+*.o
+/dialog_workspace_SDK_10.0.10.118/.metadata
+/dialog_workspace_SDK_10.0.10.118/projects/dk_apps/swl/dialog_example_swl_periph/.settings
+/dialog_workspace_SDK_10.0.10.118/projects/dk_apps/swl/dialog_example_swl_periph/DA1469x-00-Debug_RAM
+/dialog_workspace_SDK_10.0.10.118/projects/dk_apps/swl/dialog_example_swl_periph/jlink.log
+/silabs_workspace_SSv5_Gecko_SDK_3.0.2/.browser
+/silabs_workspace_SSv5_Gecko_SDK_3.0.2/.metadata
+/silabs_workspace_SSv5_Gecko_SDK_3.0.2/silabs_example_swl_periph/.pdm
+/silabs_workspace_SSv5_Gecko_SDK_3.0.2/silabs_example_swl_periph/.settings
+/silabs_workspace_SSv5_Gecko_SDK_3.0.2/outgoing
+/silabs_workspace_SSv5_Gecko_SDK_3.0.2/silabs_example_swl_periph/GNU ARM v7.2.1 - Debug
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Cache/data_0
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Cache/data_1
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Cache/data_2
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Cache/data_3
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Cache/f_000001
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Cache/f_000002
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Cache/f_000003
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Cache/f_000004
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Cache/index
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Cookies
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Cookies-journal
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Favicons
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Favicons-journal
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/GPUCache/data_0
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/GPUCache/data_1
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/GPUCache/data_2
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/GPUCache/data_3
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/GPUCache/index
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/History
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/History-journal
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Local Storage - EXT/http_127.0.0.1.localstorage
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Local Storage/leveldb/000003.log
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Local Storage/leveldb/CURRENT
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Local Storage/leveldb/LOCK
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Local Storage/leveldb/LOG
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Local Storage/leveldb/MANIFEST-000001
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Login Data
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Login Data-journal
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Sync Data/LevelDB/000003.log
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Sync Data/LevelDB/CURRENT
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Sync Data/LevelDB/LOCK
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Sync Data/LevelDB/LOG
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Sync Data/LevelDB/MANIFEST-000001
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Visited Links
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Web Data
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/Web Data-journal
+/ti_workspace_cc26x2_sdk_4_40_04_04/.jxbrowser-data/user_prefs.json
+/ti_workspace_cc26x2_sdk_4_40_04_04/.metadata
