@@ -8,7 +8,7 @@
 #elif   (SWL_DEVICE_FAMILY == DEV_FAMILY_TI)
     #include "swl_ti_types.h"
 #elif   (SWL_DEVICE_FAMILY == DEV_FAMILY_SILABS)
-    #include "swl_SILABS_types.h"
+    #include "swl_silabs_types.h"
 #elif   (SWL_DEVICE_FAMILY == DEV_FAMILY_DIALOG)
     #include "swl_dialog_types.h"
 #elif   (SWL_DEVICE_FAMILY == DEV_FAMILY_CYPRESS)
@@ -43,6 +43,7 @@ typedef uint16_t  swl_err_t;
 #define SWL_ERR_NO_DATA_FOUND                 0xDA05
 #define SWL_ERR_FLASH_OP_FAILED               0xDA06
 #define SWL_ERR_OPERATION_IN_PROG             0xDA07  
+#define SWL_ERR_INVALID_SIZE                  0xDA08
 
 #define SWL_ERR_INVALID_LICENSE               0xDAFD
 #define SWL_ERR_CRITICAL                      0xDAFE

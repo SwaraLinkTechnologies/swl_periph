@@ -7,7 +7,7 @@ extern "C" {
 
 /************** DO NOT MODIFY THE CONTENTS OF THIS FILE!!! ************/
 
-// SWL Peripheral Application Configuration - Modify this file for build-time configuration
+// SWL Peripheral Application Configuration - Modify that file for build-time configuration
 #include "swl_periph_app_config.h"
 
 // SWL Peripheral Library Includes

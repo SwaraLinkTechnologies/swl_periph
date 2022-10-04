@@ -31,7 +31,6 @@ typedef int64_t     int64;
             {                                               \
               swl_periph_log_crash(__LINE__, ERR_CODE);     \
             }                                               \
-            APP_ERROR_CHECK(ERR_CODE);                      \
           }
 
 #endif /* SWL_NRF_52_TYPES_H_ */

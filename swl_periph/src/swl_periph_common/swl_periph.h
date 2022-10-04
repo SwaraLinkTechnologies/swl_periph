@@ -211,14 +211,6 @@ typedef void (*swl_periph_exception_handler_t)(const swl_periph_exception_data_t
  */
 swl_err_t swl_periph_init(swl_periph_evt_handler_t pfn_new_evt_handler, swl_periph_exception_handler_t pfn_new_exception_handler);
 
-/**@brief Used to set the device in the desired power mode.
-  *
-  *@note  Refer to @ref swl_pwr_mode_t for valid values.
-  *
-  *@param[in]  pwr_mode     Power mode to be selected.
-  */
-swl_err_t swl_periph_set_power_mode(swl_pwr_mode_t pwr_mode);
-
 /**@brief Used to send data to the peer device. 
   *
   *@note  This function does not require the data being sent to be retained by application

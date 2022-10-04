@@ -70,6 +70,7 @@
 #include "nrf_log_ctrl.h"
 #include "nrf_log_default_backends.h"
 #include "nrf_crypto.h"
+#include "nrf_delay.h"
 #include "app_timer.h"
 #include "app_button.h"
 #include "app_error.h"
@@ -261,7 +262,7 @@ static void periph_evt_handler(swl_periph_evt_t evt, const swl_periph_evt_data_t
 
     case SWL_PERIPH_EVT_RX_DATA:
       // send back whatever was received
-      handle_rx_data((swl_c2p_data_t*)p_evt_data);
+      handle_rx_data(&p_evt_data->c2p_data);
       break;
 
     case SWL_PERIPH_EVT_DATA_ACK:
@@ -355,7 +356,7 @@ static void handle_rx_data(const swl_c2p_data_t * p_rx_data)
   // and have a 1-byte payload
 
   NRF_LOG_INFO("Data Recieved!!\n");
-  NRF_LOG_INFO("Len: %u, Maj ID: %u, Min ID %u, Payload First Byte: %u\n", rx_data_len, id_hdr_maj, id_hdr_min, *((uint8*)(p_rx_data)));
+  NRF_LOG_INFO("Len: %u, Maj ID: %u, Min ID %u, Payload First Byte: %u\n", rx_data_len, id_hdr_maj, id_hdr_min, p_rx_data->p_data[0]);
 
   if((p_rx_data->id_hdr_major == ID_HDR_MAJ_P2C_DEMO_REQ) && (rx_data_len == 1))
   {
@@ -484,22 +485,28 @@ void dump_diagnostic_log(void)
 {
     uint8 * p_diag_log;
 
-    // retrieve diagnostic log
+   // retrieve diagnostic log
     swl_periph_get_diagnostic_log(&p_diag_log);
     
     if(p_diag_log != NULL)
     {
+        uint16 i = 0;
         NRF_LOG_INFO("SwaraLink Peripheral Middleware - Diagnostic log dump:");
 
-        // print out diagnostic log raw data
-        for(uint16 i = 0; i < SWL_PERIPH_DIAGNOSTICS_LOG_BUFFER_SIZE; i++)
+        // print out diagnostic log raw data, in chunks of 3 bytes:
+        while(i < SWL_PERIPH_DIAGNOSTICS_LOG_BUFFER_SIZE)
         {
-            // print byte from diagnostic log
-            NRF_LOG_INFO("index: %04d, data (hex): %02x", i, *p_diag_log);
-        
-            // increment pointer by 1 byte
-            p_diag_log++;
+            // print bytes from diagnostic log
+            NRF_LOG_INFO("index: %04d, type: %02x id: %04x", i, *p_diag_log, *((uint16*)(p_diag_log+1)) );
+            i = i + 3;
+            p_diag_log = p_diag_log + 3;
+
+            // 1ms delay to allow time for RTT logging to complete
+            nrf_delay_ms(1);
         }
+
+
+
     }
     else
     {
@@ -514,10 +521,10 @@ void exception_handler(const swl_periph_exception_data_t * p_exception_data)
     if(p_exception_data != NULL)
     {    
         NRF_LOG_INFO("swl_periph exception occurred! Please take note of the following information and report to SwaraLink Technologies:");
-        NRF_LOG_INFO("Exception filename code:      %u", p_exception_data->filename_code);
+        NRF_LOG_INFO("Exception filename code:      %02x", p_exception_data->filename_code);
         NRF_LOG_INFO("Exception line number:        %u", p_exception_data->line_number);
-        NRF_LOG_INFO("Exception metadata A:         %u", p_exception_data->metadata_a);
-        NRF_LOG_INFO("Exception metadata B:         %u", p_exception_data->metadata_b);
+        NRF_LOG_INFO("Exception metadata A:         %08x", p_exception_data->metadata_a);
+        NRF_LOG_INFO("Exception metadata B:         %08x", p_exception_data->metadata_b);
     }
 
     // retrieve and print out diagnostic log raw data
@@ -691,8 +698,10 @@ static void initialize_swl_periph_middleware(void)
     APP_ERROR_CHECK(err_code);
 
     // Configure buffers for the SwaraLink Peripheral middleware
+    // (error response is checked using standard Nordic APP_ERROR_CHECK macro
+    // since the swl_periph exception handler has not yet been registered)
     swl_err_code = swl_periph_config();
-    SWL_ERROR_CHECK(swl_err_code);
+    APP_ERROR_CHECK(swl_err_code);
 
     //Init app scheduler
     APP_SCHED_INIT(SCHED_MAX_EVENT_DATA_SIZE, SCHED_QUEUE_SIZE);
