@@ -1,0 +1,33 @@
+# Silicon Labs Project Configuration Tools: slcp, v0, Component selection file.
+project_name: swl_bootloader
+label: swl_bootloader
+description: |
+  Standalone Bootloader using the Bluetooth AppLoader OTA DFU. This implements in-place application updates using Bluetooth connection.
+category: Example|Bootloader
+filter:
+- name: Device Type
+  value: [SoC]
+- name: MCU
+  value: [Bootloader]
+- name: Project Difficulty
+  value: [Advanced]
+package: bootloader
+quality: production
+readme:
+- {path: readme.md}
+sdk: {id: gecko_sdk, version: 4.1.2}
+toolchain_settings: []
+component:
+- {id: bootloader_debug}
+- {id: bootloader_apploader}
+- {id: bootloader_image_parser}
+- {id: brd4184a}
+- {id: bootloader_core}
+- {id: psa_crypto}
+- {id: EFR32BG22C224F512IM40}
+other_file:
+- {path: postbuild.sh}
+ui_hints:
+  highlight:
+  - {path: readme.md, focus: true}
+
