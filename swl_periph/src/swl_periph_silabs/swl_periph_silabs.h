@@ -18,7 +18,6 @@
 
 #define SWL_PERIPH_SILABS_H__
 
-#include "swl_periph_dev_types.h"
 #include "em_common.h"
 #include "sl_bluetooth.h"
 
